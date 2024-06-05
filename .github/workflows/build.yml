@@ -5,6 +5,7 @@ on:
 
 env:
   ARCH: arm64
+  BUILD_ID: stable
 
 jobs:
   prepare:
@@ -72,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           retention-days: 30
-          name: lpi3h-${{ env.BOARD }}-${{ env.BUILD_ID }}
+          name: lpi3h-${{ env.BUILD_ID }}
           path: |
                   *.xz
                   *.sha512
